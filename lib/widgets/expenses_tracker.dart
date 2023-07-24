@@ -1,3 +1,4 @@
+import 'package:expense_tracker/widgets/new_expense.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -40,6 +41,12 @@ class _ExpenseState extends State<Expense> {
         category: Category.work),
   ];
 
+  void _openAddExpenseOverlay() {
+    showModalBottomSheet(context: context, builder: (ctx) {
+      return NewExpense();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +54,7 @@ class _ExpenseState extends State<Expense> {
         title: const Text("Flutter ExpenseTracker"),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: _openAddExpenseOverlay,
             icon: const Icon(Icons.add),
           ),
         ],
