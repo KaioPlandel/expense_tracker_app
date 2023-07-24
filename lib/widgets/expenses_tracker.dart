@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'expenses_list.dart';
-import 'models/expense.dart';
+import 'expenses_list/expenses_list.dart';
+import '../models/expense.dart';
 
 class Expense extends StatefulWidget {
   const Expense({Key? key}) : super(key: key);
