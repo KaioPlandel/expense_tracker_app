@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import 'expenses_list.dart';
 import 'models/expense.dart';
 
 class Expense extends StatefulWidget {
@@ -43,7 +44,10 @@ class _ExpenseState extends State<Expense> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        children: [Text("The chart"), Text("Expenses list")],
+        children: [
+          const Text("The chart"),
+          Expanded(child: ExpensesList(expenses: _resgisteredExpenses)),
+        ],
       ),
     );
   }
