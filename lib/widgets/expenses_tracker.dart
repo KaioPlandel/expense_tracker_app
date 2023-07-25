@@ -41,10 +41,22 @@ class _ExpenseState extends State<Expense> {
         category: Category.work),
   ];
 
-  void _openAddExpenseOverlay() {
-    showModalBottomSheet(context: context, builder: (ctx) {
-      return NewExpense();
+  void _addExpenses(Expenses expenses) {
+    setState(() {
+      _resgisteredExpenses.add(expenses);
     });
+  }
+
+  void _openAddExpenseOverlay() {
+    showModalBottomSheet(
+        context: context,
+        builder: (ctx) {
+          return NewExpense(
+            onAddExpenses: (Expenses expenses) {
+              _addExpenses(expenses);
+            },
+          );
+        });
   }
 
   @override
